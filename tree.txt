@@ -1,0 +1,95 @@
+nginxops/
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py                    # FastAPI 入口
+│   │   ├── config.py                  # 全局配置
+│   │   ├── database.py                # 数据库初始化
+│   │   ├── scheduler.py               # 定时任务调度
+│   │   ├── models/
+│   │   │   ├── __init__.py
+│   │   │   ├── user.py
+│   │   │   ├── node.py
+│   │   │   ├── config_version.py
+│   │   │   ├── static_file.py
+│   │   │   ├── ssl_cert.py
+│   │   │   ├── alert.py
+│   │   │   ├── monitor.py
+│   │   │   └── settings.py
+│   │   ├── routers/
+│   │   │   ├── __init__.py
+│   │   │   ├── auth.py
+│   │   │   ├── users.py
+│   │   │   ├── configs.py
+│   │   │   ├── static_files.py
+│   │   │   ├── nodes.py
+│   │   │   ├── ssl_certs.py
+│   │   │   ├── monitoring.py
+│   │   │   └── alerts.py
+│   │   ├── services/
+│   │   │   ├── __init__.py
+│   │   │   ├── nginx_service.py
+│   │   │   ├── sync_service.py
+│   │   │   ├── ssl_service.py
+│   │   │   ├── log_parser.py
+│   │   │   ├── monitor_service.py
+│   │   │   ├── alert_service.py
+│   │   │   └── feishu_service.py
+│   │   ├── middleware/
+│   │   │   ├── __init__.py
+│   │   │   ├── auth.py
+│   │   │   └── permissions.py
+│   │   └── utils/
+│   │       ├── __init__.py
+│   │       ├── ssh_client.py
+│   │       └── crypto.py
+│   ├── requirements.txt
+│   └── run.py
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── api/
+│   │   │   ├── request.js
+│   │   │   ├── auth.js
+│   │   │   ├── config.js
+│   │   │   ├── node.js
+│   │   │   ├── monitor.js
+│   │   │   ├── ssl.js
+│   │   │   ├── user.js
+│   │   │   ├── staticFile.js
+│   │   │   └── alert.js
+│   │   ├── components/
+│   │   │   ├── CodeEditor.vue
+│   │   │   └── StatusBadge.vue
+│   │   ├── layout/
+│   │   │   └── MainLayout.vue
+│   │   ├── router/
+│   │   │   └── index.js
+│   │   ├── store/
+│   │   │   └── user.js
+│   │   ├── views/
+│   │   │   ├── Login.vue
+│   │   │   ├── Dashboard.vue
+│   │   │   ├── ConfigEditor.vue
+│   │   │   ├── StaticFiles.vue
+│   │   │   ├── NodeManager.vue
+│   │   │   ├── SSLCerts.vue
+│   │   │   ├── UserManager.vue
+│   │   │   ├── AlertConfig.vue
+│   │   │   └── LogViewer.vue
+│   │   ├── App.vue
+│   │   └── main.js
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+├── data/                              # 运行时数据
+│   ├── nginx_webui.db
+│   ├── backups/
+│   │   ├── configs/
+│   │   └── static_files/
+│   └── ssl/
+├── scripts/
+│   ├── install.sh
+│   ├── nginx-webui.service
+│   └── init_admin.py
+└── README.md
